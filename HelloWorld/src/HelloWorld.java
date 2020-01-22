@@ -1,23 +1,49 @@
 
 public class HelloWorld {
 	/*
-	 * ¿©·¯ ¶óÀÎÀ» ÁÖ¼®Ã³¸®ÇÒ ¶§ »ç¿ëÇÕ´Ï´Ù. ÀÛ¼ºÀÚ ÇÏÁØ¿ø
+	 * ì—¬ëŸ¬ ë¼ì¸ì„ ì£¼ì„ì²˜ë¦¬í•  ë•Œ ì‚¬ìš©í•©ë‹ˆë‹¤. ì‘ì„±ì í•˜ì¤€ì›
 	 */
 	public static void main(String[] args) {
 		int age = 27;
-		// age¶ó°í ÇÏ´Â º¯¼ö¿¡ 27ÀÌ¶ó´Â °ªÀ» ´ã°Ú´Ù.
+		// ageë¼ê³  í•˜ëŠ” ë³€ìˆ˜ì— 27ì´ë¼ëŠ” ê°’ì„ ë‹´ê² ë‹¤.
 		int year = 2020;
-		// Å¸ÀÔÀ» Àû¾îÁÖ°í, º¯¼ö¸¦ Àû¾îÁÜ
+		// íƒ€ì…ì„ ì ì–´ì£¼ê³ , ë³€ìˆ˜ë¥¼ ì ì–´ì¤Œ
 		System.out.println("Hello, welcome to the java world");
-		System.out.println("¿ÃÇØ´Â " + year); 
-		
-		
-		// +´Â SQLÀÇ CONCAT °ú °°À½
-		System.out.println("³ªÀÌ´Â " + age);
+		System.out.println("ì˜¬í•´ëŠ” " + year);
+
+		// +ëŠ” SQLì˜ CONCAT ê³¼ ê°™ìŒ
+		System.out.println("ë‚˜ì´ëŠ” " + age);
 		System.out.println(year + age);
-		System.out.println("¿ÃÇØ´Â " + year + "³» ³ªÀÌ´Â" + age + " ÀÔ´Ï´Ù");
-		System.out.println("¿ÃÇØ´Â" + year);
-		System.out.println("³» ³ªÀÌ´Â " + age + "ÀÔ´Ï´Ù");
-//year, age´Â ¼ıÀÚ¶ó¼­ ´õÇÏ¸é °ª³¢¸® ´õÇÏ°Ô µÈ´Ù.
+		System.out.println("ì˜¬í•´ëŠ” " + year + "ë‚´ ë‚˜ì´ëŠ”" + age + " ì…ë‹ˆë‹¤");
+		System.out.println("ì˜¬í•´ëŠ”" + year);
+		System.out.println("ë‚´ ë‚˜ì´ëŠ” " + age + "ì…ë‹ˆë‹¤");
+//year, ageëŠ” ìˆ«ìë¼ì„œ ë”í•˜ë©´ ê°’ë¼ë¦¬ ë”í•˜ê²Œ ëœë‹¤.
+		
+		long height = 17900000000L;
+		int weight = 68;
+		year = 2021;
+		
+		int firstDayOfYear =1;
+		
+		//intíƒ€ì…ì˜ sumì„ longìœ¼ë¡œ ë³€í™˜ì‹œì¼œì£¼ëŠ”ë²•
+		long sum = 0;
+		int firstValue = 2000000000;
+		int secondValue = 1000000000;
+		sum = (long)firstValue + secondValue;
+		System.out.println("ë‘ ìˆ˜ì˜ í•©ì€ : " + sum);
+		System.out.println("ë‚´ ëª¸ë¬´ê²ŒëŠ”" +  height + " ì…ë‹ˆë‹¤");
+
+		//ì—¬ëŸ¬ê°œì˜ ë³€ìˆ˜ë¥¼ ê°™ì€ íƒ€ì…ìœ¼ë¡œ ì €ì¥í• ë•Œ
+		int num1, num2, num3 ;
+		//num1 num2 ì´ˆê¸°í™”ë¥¼ ì‹œì¼œì¤€ë‹¤. (í• ë‹¹, ëŒ€ì…, ì´ˆê¸°í™”)
+		num1 = 10;
+		num2 = 20;
+		//num1, num2ì´ˆê¸°í™”ë¥¼ í•˜ì§€ ì•Šìœ¼ë©´ ì—ëŸ¬ê°€ ëœ¬ë‹¤.
+		//num1, num2ë¥¼ ì´ˆê¸°í™” ì‹œì¼œì£¼ê³  summaryë¥¼ num1 + num2 ë¡œ ì´ˆê¸°í™”ì‹œì¼œì¤Œ
+		int summary = num1 + num2;
+		System.out.println("summaryì˜ ê°’ì€: " + summary);
+		
+		
 	}
 }
+
