@@ -14,10 +14,10 @@ public class ForArrayExample {
 		int sum2 = 0;
 		for (int i = 0; i < 100; i++) {
 			if (i % 2 == 1) {
-				sum = sum + intAry[i];				
+				sum += intAry[i];				
 			}
 			if (intAry[i] % 2 == 1){
-				sum2 = sum2 + intAry[i];
+				sum2 += intAry[i];
 			}
 		}
 		System.out.println("홀수번째  Array 값은 : " + sum);
