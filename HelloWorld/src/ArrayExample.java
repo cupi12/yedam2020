@@ -3,6 +3,7 @@ public class ArrayExample {
 
 	public static void main(String[] args) {
 		int[] intAry = { 2, 3, 4, 5 };
+		//int intAry[] = { 2 ,3 ,4,5}; 위와 같음
 		System.out.println(intAry[0]);
 		System.out.println(intAry[1]);
 		System.out.println(intAry[2]);
