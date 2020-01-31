@@ -1,6 +1,6 @@
 package com.yedam.hjw.classes;
 
-public class Calendar2 {
+public class CalendarTeacher {
 	public static void main(String[] args) {
 		int month = 5;
 		createCal(month);
