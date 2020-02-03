@@ -8,7 +8,7 @@ public class StudentArrayExample {
 		// 참조유형 - 값을 참조해서 가져옴 Student를 담을 수 있는 배열 생성함.
 		Student[] stdAry = new Student[3];
 
-		Student sn = new Student("choi", 20, 180, 70);
+		Student sn = new Student("choi", 20, 180, 70);// 생성자를 통해 넣어준 값
 
 		Student stnt = new Student();
 		stnt.setName("hong");
@@ -32,5 +32,6 @@ public class StudentArrayExample {
 //			if(stdAry[i].name.equals("ha"))
 			System.out.println(stdAry[i].getName() + " " + stdAry[i].getAge());
 		}
-	}
+	}// end of main
+
 }
