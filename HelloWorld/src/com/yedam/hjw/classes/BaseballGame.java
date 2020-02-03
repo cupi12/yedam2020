@@ -6,7 +6,7 @@ public class BaseballGame {
 	public static void main(String[] args) {
 		int[] answer = new int[3];
 
-		for (int i = 0; i < answer.length-1; i++) {
+		for (int i = 0; i < answer.length; i++) {
 			answer[i] = (int) (Math.random() * 9) + 1;
 		}
 		System.out.println("[?] [?] [?]");
@@ -33,8 +33,7 @@ public class BaseballGame {
 							B++;
 						} else if (no1 == answer[2]) {
 							B++;
-						} else
-							System.out.println(" 1번 X  ");
+						}
 					} else if (no2 == answer[i]) {
 						if (no2 == answer[0]) {
 							B++;
@@ -44,8 +43,7 @@ public class BaseballGame {
 						}
 						if (no2 == answer[2]) {
 							B++;
-						} else
-							System.out.println(" 2번 X  ");
+						}
 
 					} else if (no3 == answer[i]) {
 						if (no3 == answer[0]) {
@@ -56,8 +54,7 @@ public class BaseballGame {
 						}
 						if (no3 == answer[2]) {
 							S++;
-						} else
-							System.out.println(" 3번 X  ");
+						}
 
 					}
 				}
