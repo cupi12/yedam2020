@@ -9,4 +9,8 @@ public interface EmpService {
 	public void empList(Employee[] emps); // 리스트
 
 	public void delEmp(int empNO, Employee[] emps); // 삭제
+	
+	public void searchEmployees(); //DB조회
+	
+	public void insertEmployees(Employees emp); //DB입력
 }
