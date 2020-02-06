@@ -4,11 +4,93 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.yedam.hjw.interfaces.common.DAO;
 import com.yedam.hjw.interfaces.model.Employees;
 
 public class EmpDAO {
+	Connection conn = null;
+	PreparedStatement pstmt = null;
+	ResultSet rs = null;
+
+	// 1. DB 전체 조회
+	public List<Employees> getEmpList() {
+		conn = DAO.getConnect();
+		String sql = "SELECT * FROM emp_temp"; // sql구문
+		List<Employees> list = new ArrayList<>();
+		try {
+			pstmt = conn.prepareStatement(sql); // sql구문을 연결하라.
+			rs = pstmt.executeQuery(); // executeQuery 메소드는 rs타입으로 반환시켜준다.
+			while (rs.next()) { // rs.next()에 데이터가 있으면 참이다.
+				Employees emp = new Employees();
+				emp.setEmployeeId(rs.getInt("employee_id"));
+				emp.setFirstName(rs.getString("first_name"));
+				emp.setLastName(rs.getString("last_name"));
+				emp.setEmail(rs.getString("email"));
+				emp.setPhoneNumber(rs.getString("phone_number"));
+				emp.setHireDate(rs.getString("hire_date"));
+				emp.setJobId(rs.getString("job_id"));
+				emp.setSalary(rs.getInt("salary"));
+				list.add(emp);
+
+			} // end of while
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DAO.close(conn); //
+		}
+		return list; // list값을 리턴해준다.
+	}// end of List<Employees> getEmpList()
+		// 2. DB 한건 조회
+
+	public Employees getEmployee(int emps) {
+		conn = DAO.getConnect();
+		String sql = "SELECT * FROM emp_temp where employee_id = ?";
+		Employees emp = new Employees();
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, emps);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				emp.setEmployeeId(rs.getInt("employee_id"));
+				emp.setFirstName(rs.getString("first_name"));
+				emp.setLastName(rs.getString("last_name"));
+				emp.setEmail(rs.getString("email"));
+				emp.setPhoneNumber(rs.getString("phone_number"));
+				emp.setHireDate(rs.getString("hire_date"));
+				emp.setJobId(rs.getString("job_id"));
+				emp.setSalary(rs.getInt("salary"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DAO.close(conn);
+		}
+		return emp;
+	}
+
+	// 3. DB 입력
+
+	// 4. DB 수정
+	public void updateEmployees(Employees emp) {
+		conn = DAO.getConnect();
+		String sql = "UPDATE emp_temp set salary = salary + ?, email = ? WHERE employee_id = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, emp.getSalary());
+			pstmt.setString(2, emp.getEmail());
+			pstmt.setInt(3, emp.getEmployeeId());
+			int r = pstmt.executeUpdate();
+			System.out.println(r + "건이 변경되었습니다.");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DAO.close(conn);
+		}
+	}
 
 	public void insertEmployees(Employees emp) {
 		Connection conn = DAO.getConnect();
