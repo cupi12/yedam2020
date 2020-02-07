@@ -34,7 +34,7 @@ public class EmpProc {
 				int salary = scn.nextInt();
 
 				Employee emp = new Employee(name, empNo, salary);
-				service.addEmp(emp, employees); //employees 배열에 건들을 저장하시오.
+				service.addEmp(emp, employees); // employees 배열에 건들을 저장하시오.
 
 			} else if (menu == 2) {
 				System.out.println("사원번호 입력 : ");
@@ -52,8 +52,8 @@ public class EmpProc {
 				break;
 			} else if (menu == 6) {
 //				service.searchEmployees();
-				List<Employees> list = service.getDBEmployees(); //List = 컬렉션 자바 유틸매서드 배열처럼 여러건들을 담겠다.
-				for(Employees emp: list) {//확장 for문
+				List<Employees> list = service.getDBEmployees(); // List = 컬렉션 자바 유틸매서드 배열처럼 여러건들을 담겠다.
+				for (Employees emp : list) {// 확장 for문
 					System.out.println(emp);
 				}
 			} else if (menu == 7) {
@@ -61,31 +61,34 @@ public class EmpProc {
 				String lastName = scn.nextLine();
 				System.out.println("이메일 입력");
 				String email = scn.nextLine();
-				System.out.println("업무 입력");  //IT_PROG
+				System.out.println("업무 입력"); // IT_PROG
 				String jobId = scn.nextLine();
 				Employees emp = new Employees();
 				emp.setLastName(lastName);
 				emp.setEmail(email);
 				emp.setJobId(jobId);
-				
+
 				service.insertEmployees(emp);
-			}else if (menu == 8) {
+			} else if (menu == 8) {
 				System.out.println("조회할 사원번호 입력");
 				int empId = scn.nextInt();
-				System.out.println("급여 인상분 입력.");
-				int sal = scn.nextInt(); scn.nextLine();
+				scn.nextLine();
+				System.out.println("급여 인상" + " 분 입력. (인상 X = 엔터");
+				String salNum = scn.nextLine();
+				int sal = 0;
+				if (salNum != null && !salNum.equals(""))
+					sal = Integer.parseInt(salNum); // paraseInt 괄호에 있는 변수의 문자열을 숫자로 바꾸시오.
+//				int sal = scn.nextInt();
 				System.out.println("변경할 이메일 입력.");
 				String email = scn.nextLine();
-				
+
 				Employees emp = new Employees();
 				emp.setEmployeeId(empId);
 				emp.setSalary(sal);
 				emp.setEmail(email);
-				
-				
+
 				service.updateDBEmp(emp);
-				
-				
+
 			}
 
 		} // end of while

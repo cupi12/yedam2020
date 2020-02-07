@@ -2,7 +2,7 @@ package com.yedam.hjw.interfaces.model;
 
 import java.util.List;
 
-public interface EmpService {
+public interface EmpService { //인터페이스 정의
 
 	public void addEmp(Employee emp, Employee[] emps); // 저장기능.
 
